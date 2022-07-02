@@ -14,7 +14,7 @@ The overarching themes of those ahead on commits are:
 - Dependency version bumps
 - Dropping or changing encoding (`iconv`, `iconv-lite`)
 - Replacing or substituting `sax` parsing for `expat`, in the browser or no
-- Forced / always on collection of child nodes
+- Forced / "Always On" collection of child nodes
 - Minor changes to events and stream handling
 
 ## Goals
@@ -168,4 +168,4 @@ Update README.md
 "mocha": "^10.0.0" from "^1.21.4"   
 
 #### Update license
-Additional compyright.
+Additional copyright.
