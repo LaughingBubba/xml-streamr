@@ -1,35 +1,35 @@
 {
-  "name": "xml-stream",
+  "name": "xml-streamr",
   "description": "XML stream to JavaScript object converter based on Expat.",
   "keywords": [
     "xml",
     "parser",
-    "expat"
+    "expat",
+    "streaming"
   ],
   "license": "MIT",
-  "version": "0.4.5",
-  "author": "AssistUnion <info@assistunion.com>",
+  "version": "0.0.1",
+  "author":  "Joseph Szili <laughingbubba@outlook.com>",
   "maintainers": [
-    "Anatoly Ressin <anatoly@assistunion.com>",
-    "Dimitry Solovyov <dimituri@gmail.com> (http://100-hour.com)"
+    "Joseph Szili <laughingbubba@outlook.com>"
   ],
   "scripts": {
     "test": "mocha tests"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/assistunion/xml-stream.git"
+    "url": "git://github.com/laughingbubba/xml-streamr.git"
   },
   "dependencies": {
-    "iconv": "^2.1.4",
-    "node-expat": "^2.3.7",
-    "readable-stream": "^1.0.31"
+    "iconv": "^3.0.1",
+    "node-expat": "^2.4.0",
+    "readable-stream": "^4.0.0"
   },
   "directories": {
     "lib": "./lib"
   },
   "main": "index",
   "devDependencies": {
-    "mocha": "^1.21.4"
+    "mocha": "^10.0.0"
   }
 }

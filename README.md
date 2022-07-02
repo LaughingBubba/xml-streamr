@@ -135,3 +135,12 @@ myAsyncFunction( function() {
 ```
 Beware that resume() **must not** be called from within a handler callback.
 
+# Change log
+## 0.0.1
+#### Upgrade dependnecies :
+    "iconv": "^3.0.1" from "^2.1.4"   
+    "node-expat": "^2.4.0" from "^2.3.7"   
+    "readable-stream": "^4.0.0" from "^1.0.31"   
+    "mocha": "^10.0.0" from "^1.21.4"   
+
+#### Update license
