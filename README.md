@@ -1,32 +1,12 @@
-# Preface
-This is a fork of the venerable [xml-stream](https://www.npmjs.com/package/xml-stream) package.
+# xml-streamr
 
-The [AssistUnion](https://github.com/assistunion) organisation that spawned the orignal is orphaned and therefore not accepting Pull Requests. 
-
-At the time of writing there were [100+ forks](https://github.com/assistunion/xml-stream/network/members).
-
-Of these forks:
-- 2/5 are forks with no further commits
-- 1/3 are behind on commits and
-- 1/4 are ahead on commits
-
-The overarching themes of those ahead on commits are:
-- Dependency version bumps
-- Dropping or changing encoding (`iconv`, `iconv-lite`)
-- Replacing or substituting `sax` parsing for `expat`, in the browser or no
-- Forced / "Always On" collection of child nodes
-- Minor changes to events and stream handling
-
-## Goals
-This package updates the `xml-stream` dependines and adds an option to customise the parsing and event handling.
-
-# XmlStreamr
-
-XmlStreamr is a Node.js XML stream parser and editor, based on
+`xml-streamr` is a Node.js XML stream parser and editor, based on
 [node-expat](https://github.com/astro/node-expat) (libexpat SAX-like parser
 binding).
 
     $ npm install xml-streamr
+
+This is a fork of the `xml-stream` package. See [Background](#background) below.
 
 ## Rationale
 
@@ -157,8 +137,46 @@ myAsyncFunction( function() {
 ```
 Beware that resume() **must not** be called from within a handler callback.
 
+# Background
+This is a fork of the venerable [xml-stream](https://www.npmjs.com/package/xml-stream) package.
+
+The [AssistUnion](https://github.com/assistunion) organisation that spawned the orignal is orphaned and therefore not accepting Pull Requests. 
+
+At the time of writing there were [100+ forks](https://github.com/assistunion/xml-stream/network/members).
+
+Of these forks:
+- 2/5 are forks with no further commits
+- 1/3 are behind on commits and
+- 1/4 are ahead on commits
+
+The overarching themes of those ahead on commits are:
+- Dependency version bumps
+- Dropping or changing encoding (`iconv`, `iconv-lite`)
+- Replacing or substituting `sax` parsing for `expat`, in the browser or no
+- Forced / "Always On" collection of child nodes
+- Minor changes to events and stream handling
+
+## Goals
+This package updates the `xml-stream` dependines and adds options to customise the parsing and event handling.
+
 # Change log
-## 0.0.2
+
+## 0.1.0
+- Drop encoding parameter in favour of embedding it an options object
+- Add a `textNodeName` option to name the text node as something other than `$text` in the parsed JSON. Defaults to `$text` if not supplied.
+
+eg:
+```javascript
+const XmlStreamr = require('xml-streamr');
+const options {
+  textNodeName: "value",
+  encoding: "UTF-8"
+};
+
+var stream = fs.createReadStream('some.xml')
+var xml = new XmlStreamr(stream, options);
+```
+## 0.0.2 & 0.0.3
 Update README.md
 ## 0.0.1
 #### Upgrade dependnecies :

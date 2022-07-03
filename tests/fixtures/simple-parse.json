@@ -1,0 +1,14 @@
+[
+    {
+        "$": { "subs": "false" },
+        "$text": "1 2 3"
+    },
+    {
+        "$": { "subs": "true" },
+        "$text": "4",
+        "subitem": [
+            "four",
+            "five"
+        ]
+    }
+]

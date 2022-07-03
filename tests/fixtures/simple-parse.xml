@@ -1,0 +1,12 @@
+<root>
+  <item subs="false">
+    1 
+    2 
+    3     
+  </item>
+  <item subs="true">
+    4 
+      <subitem>four</subitem>
+      <subitem>five</subitem>
+  </item>
+</root>
