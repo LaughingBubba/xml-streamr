@@ -6,10 +6,10 @@ var fs = require('fs')
 
 describe('XmlStream', function() {
 
-	it('should should rename text nodes', function(done) {
-		var stream = fs.createReadStream(path.resolve(__dirname, 'fixtures/simple-parse.xml'));
-		var fileExpected = fs.readFileSync(path.resolve(__dirname, 'fixtures/textnode-rename.json'));
-		var xml = new XmlStream(stream, {textNodeName: "value"});
+	it('should coerce text nodes', function(done) {
+		var stream = fs.createReadStream(path.resolve(__dirname, 'fixtures/coercion.xml'));
+		var fileExpected = fs.readFileSync(path.resolve(__dirname, 'fixtures/coercion.json'));
+		var xml = new XmlStream(stream, {coerce: true});
 		var results = [];
 
 		xml.collect('subitem');

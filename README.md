@@ -137,6 +137,16 @@ myAsyncFunction( function() {
 ```
 Beware that resume() **must not** be called from within a handler callback.
 
+# Options
+
+```javascript
+const defaultOptions = {
+      textNodeName: '$text',  // Name the returned text node
+      coerce: false,          // Coerce Numerice and Boolean typed text node 
+      encoding: null          // Text encoding ie: "UTF-8" - default if not supplied
+};
+```
+
 # Background
 This is a fork of the venerable [xml-stream](https://www.npmjs.com/package/xml-stream) package.
 
@@ -160,6 +170,45 @@ The overarching themes of those ahead on commits are:
 This package updates the `xml-stream` dependencies and adds options to customise the parsing and event handling.
 
 # Change log
+
+## 0.2.0
+- Allow basic type coercion for possible numeric and boolean text nodes.
+
+eg:
+```javascript
+const XmlStreamr = require('xml-streamr');
+const options {
+  coerce: true
+};
+
+var stream = fs.createReadStream('some.xml')
+var xml = new XmlStreamr(stream, options);
+```
+
+```xml
+<root>
+  <item>1</item>
+  <item>True</item>
+</root>
+```
+
+Results in:
+```json
+[
+    { "$text": 1 },
+    { "$text": true }
+]
+```
+
+Instead of:
+```json
+[
+    { "$text": "1" },
+    { "$text": "True" }
+]
+```
+
+
 
 ## 0.1.1
 - Improve internal options defaults and handling

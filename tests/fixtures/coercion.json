@@ -1,0 +1,9 @@
+[
+    { "$text": 1 },
+    { "$text": 2 },
+    { "$text": "3A" },
+    { "$text": "4B" },
+    { "$text": 666.66 },
+    { "$text": true },
+    { "$text": false }
+]
