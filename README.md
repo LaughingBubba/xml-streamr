@@ -157,9 +157,12 @@ The overarching themes of those ahead on commits are:
 - Minor changes to events and stream handling
 
 ## Goals
-This package updates the `xml-stream` dependines and adds options to customise the parsing and event handling.
+This package updates the `xml-stream` dependencies and adds options to customise the parsing and event handling.
 
 # Change log
+
+## 0.1.1
+- Improve internal options defaults and handling
 
 ## 0.1.0
 - Drop encoding parameter in favour of embedding it an options object
